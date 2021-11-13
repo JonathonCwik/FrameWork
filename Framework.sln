@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameWork.Interfaces", "FrameWork.Interfaces\FrameWork.Interfaces.csproj", "{BE3A132F-A5F0-457D-9AC5-F2A54E61AFA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameWork.Serialization.Protobuf", "FrameWork.Serialization.Protobuf\FrameWork.Serialization.Protobuf.csproj", "{375A4533-A788-463B-8D3B-F2660D8C775C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B12FE8C0-5AAE-45FD-8A55-BBF9249A45CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameWork.Serialization.Protobuf.UnitTests", "Tests\FrameWork.Serialization.Protobuf.UnitTests\FrameWork.Serialization.Protobuf.UnitTests.csproj", "{AEEA83C0-754E-4BE1-B5BE-913CEADF0E55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameWork.EventBus.Rabbit", "FrameWork.EventBus.Rabbit\FrameWork.EventBus.Rabbit.csproj", "{3EAA24F5-AD02-45BE-9144-1BC630319E88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameWork.EventBus.Rabbit.IntegrationTests", "Tests\FrameWork.EventBus.Rabbit.IntegrationTests\FrameWork.EventBus.Rabbit.IntegrationTests.csproj", "{216DAADD-53B0-4959-9C53-A90311954D6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameWork.Logger.Console", "FrameWork.Logger.Console\FrameWork.Logger.Console.csproj", "{264397E6-C7CE-427A-A57F-33EBC45E3B58}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE3A132F-A5F0-457D-9AC5-F2A54E61AFA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE3A132F-A5F0-457D-9AC5-F2A54E61AFA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE3A132F-A5F0-457D-9AC5-F2A54E61AFA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE3A132F-A5F0-457D-9AC5-F2A54E61AFA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{375A4533-A788-463B-8D3B-F2660D8C775C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{375A4533-A788-463B-8D3B-F2660D8C775C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{375A4533-A788-463B-8D3B-F2660D8C775C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{375A4533-A788-463B-8D3B-F2660D8C775C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEEA83C0-754E-4BE1-B5BE-913CEADF0E55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEEA83C0-754E-4BE1-B5BE-913CEADF0E55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEEA83C0-754E-4BE1-B5BE-913CEADF0E55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEEA83C0-754E-4BE1-B5BE-913CEADF0E55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EAA24F5-AD02-45BE-9144-1BC630319E88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EAA24F5-AD02-45BE-9144-1BC630319E88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EAA24F5-AD02-45BE-9144-1BC630319E88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EAA24F5-AD02-45BE-9144-1BC630319E88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{216DAADD-53B0-4959-9C53-A90311954D6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{216DAADD-53B0-4959-9C53-A90311954D6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{216DAADD-53B0-4959-9C53-A90311954D6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{216DAADD-53B0-4959-9C53-A90311954D6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{264397E6-C7CE-427A-A57F-33EBC45E3B58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{264397E6-C7CE-427A-A57F-33EBC45E3B58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{264397E6-C7CE-427A-A57F-33EBC45E3B58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{264397E6-C7CE-427A-A57F-33EBC45E3B58}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AEEA83C0-754E-4BE1-B5BE-913CEADF0E55} = {B12FE8C0-5AAE-45FD-8A55-BBF9249A45CA}
+		{216DAADD-53B0-4959-9C53-A90311954D6E} = {B12FE8C0-5AAE-45FD-8A55-BBF9249A45CA}
+	EndGlobalSection
+EndGlobal
