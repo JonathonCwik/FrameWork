@@ -7,7 +7,6 @@ using FrameWork.Interfaces.EventBus;
 using FrameWork.Serialization.Protobuf;
 using NUnit.Framework;
 using ProtoBuf;
-using FrameWork.Logger.ConsoleLogger;
 using FrameWork.EventBus.Rabbit.Extension.Extensions;
 using DotNet.Testcontainers.Containers.Builders;
 using DotNet.Testcontainers.Containers.WaitStrategies;
@@ -18,7 +17,7 @@ namespace FrameWork.EventBus.Rabbit.IntegrationTests;
 public class PubSubTests
 {
 
-    private TestcontainersContainer rabbitContainer;
+    private TestcontainersContainer? rabbitContainer;
 
     [OneTimeSetUp]
     public async Task Setup() {
@@ -30,42 +29,14 @@ public class PubSubTests
         .WithWaitStrategy(Wait.ForUnixContainer().UntilPortIsAvailable(5672));
 
         rabbitContainer = testcontainersBuilder.Build();
-        await rabbitContainer.StartAsync();
-        
-        var connFactory = new ConnectionFactory
-        {
-            HostName = "localhost",
-            Port = 5672,
-            UserName = "guest",
-            Password = "guest",
-            AutomaticRecoveryEnabled = true,
-            RequestedHeartbeat = 60,
-            RequestedConnectionTimeout = 500,
-            ContinuationTimeout = TimeSpan.FromMilliseconds(500),
-            NetworkRecoveryInterval = TimeSpan.FromMilliseconds(500)
-        };
-
-        DateTime start = DateTime.Now;
-        // while (true) {
-        //     var connected = false;
-        //     try {
-        //         var conn = connFactory.CreateConnection();
-        //         connected = true;
-        //         Console.WriteLine("Connected!");
-        //     } catch (Exception) {
-        //         Console.WriteLine("Not able to connect yet, retrying");
-        //     }
-
-        //     if (DateTime.Now - start > TimeSpan.FromMinutes(3) || connected) {
-        //         break;
-        //     }
-        // }
-        
+        await rabbitContainer.StartAsync();        
     }
 
     [OneTimeTearDown]
     public async Task TearDown() {
-        await rabbitContainer.DisposeAsync();
+        if (rabbitContainer != null) {
+            await rabbitContainer.DisposeAsync();
+        }
     }
 
     [Test]

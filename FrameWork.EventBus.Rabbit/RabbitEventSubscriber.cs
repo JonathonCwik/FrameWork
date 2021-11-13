@@ -71,6 +71,7 @@ public class RabbitEventSubscriber : RabbitEventBusBase<RabbitEventSubscriber>
 
         async Task<EventingBasicConsumer> Consumer(IModel channel)
         {
+            await Task.CompletedTask;
             var basicConsumer = new EventingBasicConsumer(channel);
             var queueArgs = new Dictionary<string, object> { { "x-dead-letter-exchange", dlx } };
             channel.ExchangeDeclare(exchange, "topic", true, false);
@@ -99,7 +100,7 @@ public class RabbitEventSubscriber : RabbitEventBusBase<RabbitEventSubscriber>
                 {
                     @event = Serializer.Deserialize<TEvent>(arguments.Body);
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     channel.BasicNack(arguments.DeliveryTag, false, false);                
                     throw;
@@ -115,7 +116,7 @@ public class RabbitEventSubscriber : RabbitEventBusBase<RabbitEventSubscriber>
                         channel.BasicAck(arguments.DeliveryTag, false);
                     }
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     if (arguments.Redelivered)
                     {

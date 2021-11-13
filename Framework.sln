@@ -15,8 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameWork.EventBus.Rabbit",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameWork.EventBus.Rabbit.IntegrationTests", "Tests\FrameWork.EventBus.Rabbit.IntegrationTests\FrameWork.EventBus.Rabbit.IntegrationTests.csproj", "{216DAADD-53B0-4959-9C53-A90311954D6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameWork.Logger.Console", "FrameWork.Logger.Console\FrameWork.Logger.Console.csproj", "{264397E6-C7CE-427A-A57F-33EBC45E3B58}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,10 +44,6 @@ Global
 		{216DAADD-53B0-4959-9C53-A90311954D6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{216DAADD-53B0-4959-9C53-A90311954D6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{216DAADD-53B0-4959-9C53-A90311954D6E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{264397E6-C7CE-427A-A57F-33EBC45E3B58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{264397E6-C7CE-427A-A57F-33EBC45E3B58}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{264397E6-C7CE-427A-A57F-33EBC45E3B58}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{264397E6-C7CE-427A-A57F-33EBC45E3B58}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{AEEA83C0-754E-4BE1-B5BE-913CEADF0E55} = {B12FE8C0-5AAE-45FD-8A55-BBF9249A45CA}

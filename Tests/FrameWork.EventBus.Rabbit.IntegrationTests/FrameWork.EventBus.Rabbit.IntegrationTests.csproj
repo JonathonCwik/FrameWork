@@ -19,6 +19,5 @@
   <ItemGroup>
     <ProjectReference Include="..\..\FrameWork.EventBus.Rabbit\FrameWork.EventBus.Rabbit.csproj" />
     <ProjectReference Include="..\..\FrameWork.Serialization.Protobuf\FrameWork.Serialization.Protobuf.csproj" />
-    <ProjectReference Include="..\..\FrameWork.Logger.Console\FrameWork.Logger.Console.csproj" />
   </ItemGroup>
 </Project>
