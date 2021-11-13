@@ -5,7 +5,16 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
+    <Authors>Jonathon Cwik</Authors>
+    <Description>Base Interfaces for FrameWork</Description>
+    <PackageIcon>icon.png</PackageIcon>
+    <IncludeSymbols>true</IncludeSymbols>
+    <PackageTags>Event, Bus, Topic, Message, Cache, Bootstrap</PackageTags>
+    <PackageProjectUrl>https://github.com/JonathonCwik/FrameWork</PackageProjectUrl>
   </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\icon.png" Pack="true" PackagePath="\"/>
+  </ItemGroup>
 
 </Project>

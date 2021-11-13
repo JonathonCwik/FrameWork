@@ -5,10 +5,19 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
+    <Authors>Jonathon Cwik</Authors>
+    <Description>Base Interfaces for FrameWork</Description>
+    <PackageReadmeFile>Readme.md</PackageReadmeFile>
+    <PackageIcon>icon.png</PackageIcon>
+    <IncludeSymbols>true</IncludeSymbols>
+    <PackageTags>Serialization, Serialize, Protobuf</PackageTags>
+    <PackageProjectUrl>https://github.com/JonathonCwik/FrameWork/tree/main/FrameWork.Serialization.Protobuf</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include=".\Readme.md" Pack="true" PackagePath="\"/>
+    <None Include="..\icon.png" Pack="true" PackagePath="\"/>
     <ProjectReference Include="..\FrameWork.Interfaces\FrameWork.Interfaces.csproj" />
   </ItemGroup>
 
