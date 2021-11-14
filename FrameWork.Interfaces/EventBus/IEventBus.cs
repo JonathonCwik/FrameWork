@@ -23,7 +23,6 @@ public interface IEventPublisher : IBusBase
 public interface IEventSubscriber : IBusBase
 {
     Task SubscribeAsync<TEventHandler, TEvent>(string _namespace, TEventHandler eventHandler) where TEventHandler : IEventHandler<TEvent> where TEvent : class;
-    void StopSubscribing();
 }
 
 public interface IEventBus : IEventPublisher, IEventSubscriber {

@@ -8,7 +8,7 @@ using RabbitMQ.Client.Exceptions;
 
 namespace FrameWork.EventBus.Rabbit;
 
-public class RabbitEventPublisher : RabbitEventBusBase<RabbitEventPublisher>
+public class RabbitEventPublisher : RabbitEventBusBase<RabbitEventPublisher>, IEventPublisher
 {
     public string ExchangeName { get; private set; }
     private string dlxNameBase;

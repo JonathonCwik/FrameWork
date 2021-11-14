@@ -9,7 +9,7 @@ using RabbitMQ.Client.Events;
 
 namespace FrameWork.EventBus.Rabbit;
 
-public class RabbitEventSubscriber : RabbitEventBusBase<RabbitEventSubscriber>
+public class RabbitEventSubscriber : RabbitEventBusBase<RabbitEventSubscriber>, IEventSubscriber
 {
     public readonly string Namespace = "";
     private List<IModel> channels = new List<IModel>();
@@ -158,5 +158,13 @@ public class RabbitEventSubscriber : RabbitEventBusBase<RabbitEventSubscriber>
     private string GetTopic(string eventName, string domain)
     {
         return domain.ToLower() + ".event." + eventName.ToLower();
+    }
+
+    public override async Task Stop()
+    {
+        await base.Stop();
+        foreach (var c in channels) {
+            c.Dispose();
+        }
     }
 }
