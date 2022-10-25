@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameWork.EventBus.Rabbit",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameWork.EventBus.Rabbit.IntegrationTests", "Tests\FrameWork.EventBus.Rabbit.IntegrationTests\FrameWork.EventBus.Rabbit.IntegrationTests.csproj", "{216DAADD-53B0-4959-9C53-A90311954D6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Socket.Udp", "Framework.Socket.Udp\Framework.Socket.Udp.csproj", "{32F3F376-641B-4490-A753-0506AAC6D5B3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameWork.Socket.Udp", "Framework.Socket.Udp\FrameWork.Socket.Udp.csproj", "{32F3F376-641B-4490-A753-0506AAC6D5B3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameWork.Socket.Udp.UnitTests", "Tests\FrameWork.Socket.Udp.UnitTests\FrameWork.Socket.Udp.UnitTests.csproj", "{16758989-9089-4D9A-9215-81B525F5426E}"
 EndProject
