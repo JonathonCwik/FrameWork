@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+<PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>1.0.0</Version>
+    <LangVersion>latest</LangVersion>
+    <Authors>Jonathon Cwik</Authors>
+    <Description>MQTT EventBus Implementation for FrameWork</Description>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageReadmeFile>Readme.md</PackageReadmeFile>
+    <IncludeSymbols>true</IncludeSymbols>
+    <PackageTags>MQTT, Mosquitto, Event, Bus, Topic, Message</PackageTags>
+    <PackageProjectUrl>https://github.com/JonathonCwik/FrameWork/tree/main/FrameWork.EventBus.MQTT</PackageProjectUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\icon.png" Pack="true" PackagePath="\"/>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="MQTTnet" Version="4.1.1.318" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".\Readme.md" Pack="true" PackagePath="\"/>
+    <ProjectReference Include="..\FrameWork.Interfaces\FrameWork.Interfaces.csproj" />
+  </ItemGroup>
+</Project>
