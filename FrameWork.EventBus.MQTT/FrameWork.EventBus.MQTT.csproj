@@ -7,7 +7,6 @@
     <Authors>Jonathon Cwik</Authors>
     <Description>MQTT EventBus Implementation for FrameWork</Description>
     <PackageIcon>icon.png</PackageIcon>
-    <PackageReadmeFile>Readme.md</PackageReadmeFile>
     <IncludeSymbols>true</IncludeSymbols>
     <PackageTags>MQTT, Mosquitto, Event, Bus, Topic, Message</PackageTags>
     <PackageProjectUrl>https://github.com/JonathonCwik/FrameWork/tree/main/FrameWork.EventBus.MQTT</PackageProjectUrl>
