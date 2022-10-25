@@ -18,7 +18,6 @@
     <PackageReference Include="MQTTnet" Version="4.1.1.318" />
   </ItemGroup>
   <ItemGroup>
-    <None Include=".\Readme.md" Pack="true" PackagePath="\"/>
     <ProjectReference Include="..\FrameWork.Interfaces\FrameWork.Interfaces.csproj" />
   </ItemGroup>
 </Project>
