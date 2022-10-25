@@ -27,7 +27,7 @@ public class UdpListenerTests
     [Test]
     public async Task ListenForUTF8Bytes()
     {
-        using (var listener = new UdpListener(21234, 1024)) {
+        using (var listener = new UdpListener(11234, 1024)) {
             var received = new List<byte[]>();
             var task = listener.Listen(data => {
                 Debug.WriteLine("Data received");
@@ -38,9 +38,9 @@ public class UdpListenerTests
             
             var expected = "This is the expected string";
 
-            using (var client = new UdpClient(21234)) {
+            using (var client = new UdpClient(11234)) {
                 var bytes = Encoding.UTF8.GetBytes(expected);
-                client.Connect(IPAddress.Loopback, 21234);
+                client.Connect(IPAddress.Loopback, 11234);
                 var bytesSent = client.Send(bytes);
                 Assert.Greater(bytesSent, 0);
             }

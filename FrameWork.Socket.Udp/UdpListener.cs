@@ -36,7 +36,7 @@ public class UdpListener : IDisposable
                 {
                     var buffer = new byte[bufferSize];
                     await socket.ReceiveAsync(buffer, SocketFlags.None);
-                    onDataReceived.Invoke(buffer);
+                    onDataReceived.Invoke(TrimTailingZeros(buffer));
                 }
             });
         } else {
