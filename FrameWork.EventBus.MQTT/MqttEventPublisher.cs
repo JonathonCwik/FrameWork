@@ -25,6 +25,10 @@ namespace FrameWork.EventBus.MQTT
                 throw new Exception("Not able to publish until eventbus is successfully connected");
             }
 
+            await Publish(@event, 0);
+        }
+
+        private async Task Publish<TEvent>(TEvent @event, int retry = 0) {
             var eventAttr = typeof(TEvent).GetCustomAttributes(true)
                 .FirstOrDefault(e => e.GetType() == typeof(MqttEventAttribute)) as MqttEventAttribute;
 
@@ -35,7 +39,18 @@ namespace FrameWork.EventBus.MQTT
 
             var publishResult = await mqttClient.PublishStringAsync(_namespace + "/" + eventAttr.Topic, serializer.Serialize(@event));
             if (publishResult.ReasonCode != MqttClientPublishReasonCode.Success) {
-                throw new System.Exception($"Error publishing to MQTT server ({Enum.GetName(typeof(MqttClientConnectResultCode), publishResult.ReasonCode)}): {publishResult.ReasonString} ");
+                if (retry > 2) {
+                    throw new System.Exception($"Error publishing to MQTT server ({Enum.GetName(typeof(MqttClientConnectResultCode), publishResult.ReasonCode)}): {publishResult.ReasonString} ");
+                } else {
+                    Console.WriteLine($"WARN: Error publishing to MQTT server ({Enum.GetName(typeof(MqttClientConnectResultCode), publishResult.ReasonCode)}): {publishResult.ReasonString}");
+                    if (retry == 0) {
+                        await Stop();
+                        await Start();
+                    }
+                    await Task.Delay(retry * 1000);
+                    retry++;
+                    await Publish(@event, retry);
+                }
             }
         }
     }

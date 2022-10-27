@@ -35,28 +35,27 @@ public class PubSubTests
         .WithName("eclipse-mosquitto-with-auth")
         .WithMount("../../../mosquitto-auth.conf", "/mosquitto/config/mosquitto.conf")
         .WithMount("../../../password_file", "/etc/mosquitto/password_file")
-        .WithPortBinding(1883, 1883)
+        .WithPortBinding("1883", true)
         .WithWaitStrategy(Wait.ForUnixContainer().UntilPortIsAvailable(1883));
 
         mosquittoNoAuthContainer = testcontainersBuilder.Build();
         await mosquittoNoAuthContainer.StartAsync();
 
-
-        var subscriber1 = new MqttEventSubscriber("mqtt://localhost:1883", 
+        var subscriber1 = new MqttEventSubscriber("mqtt://localhost:" + mosquittoNoAuthContainer.GetMappedPublicPort(1883), 
             new JsonNETSerializer(new Newtonsoft.Json.JsonSerializerSettings()), "admin", "password");
 
         await subscriber1.Start();
         var testEventHandler1 = new TestEventHandler1();
         await subscriber1.SubscribeAsync<TestEventHandler1, TestEvent1>("testing", testEventHandler1);
 
-         var subscriber2 = new MqttEventSubscriber("mqtt://localhost:1883", 
+         var subscriber2 = new MqttEventSubscriber("mqtt://localhost:" + mosquittoNoAuthContainer.GetMappedPublicPort(1883), 
             new JsonNETSerializer(new Newtonsoft.Json.JsonSerializerSettings()), "admin", "password");
 
         await subscriber2.Start();
         var testEventHandler2 = new TestEventHandler2();
         await subscriber2.SubscribeAsync<TestEventHandler2, TestEvent1>("testing", testEventHandler2);
 
-        var publisher = new MqttEventPublisher("mqtt://localhost:1883", 
+        var publisher = new MqttEventPublisher("mqtt://localhost:" + mosquittoNoAuthContainer.GetMappedPublicPort(1883), 
             new JsonNETSerializer(new Newtonsoft.Json.JsonSerializerSettings()), "testing", "admin", "password");
         await publisher.Start();
 

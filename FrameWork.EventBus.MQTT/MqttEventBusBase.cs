@@ -16,6 +16,12 @@ namespace FrameWork.EventBus.MQTT
         private readonly string username;
         private readonly string password;
 
+        private MqttClientOptionsBuilder defaultMqttClientOptionsBuilder = new MqttClientOptionsBuilder()
+                .WithKeepAlivePeriod(TimeSpan.FromDays(20000))
+                .WithTimeout(TimeSpan.FromSeconds(5))
+                .WithClientId(Guid.NewGuid().ToString())
+                .WithCleanSession();
+
         public MqttEventBusBase(string uri, ISerializer serializer, string username = null, string password = null)
         {
             this.serializer = serializer;
@@ -29,16 +35,16 @@ namespace FrameWork.EventBus.MQTT
             return eventBusState;
         }
 
-                public async Task Start()
+        public void SetMqttConfig(MqttClientOptionsBuilder mqttClientOptionsBuilder) {
+            this.defaultMqttClientOptionsBuilder = mqttClientOptionsBuilder;
+        }
+
+        public async Task Start()
         {
             var mqttFactory = new MqttFactory();
             mqttClient = mqttFactory.CreateMqttClient();
-            var mqttClientOptions = new MqttClientOptionsBuilder()
-                .WithConnectionUri(this.uri)
-                .WithKeepAlivePeriod(TimeSpan.FromMinutes(5))
-                .WithTimeout(TimeSpan.FromSeconds(5))
-                .WithClientId(Guid.NewGuid().ToString())
-                .WithCleanSession();
+            var mqttClientOptions = defaultMqttClientOptionsBuilder
+                .WithConnectionUri(this.uri);
 
             if (!string.IsNullOrWhiteSpace(this.username) && !string.IsNullOrWhiteSpace(this.password)) {
                 mqttClientOptions = mqttClientOptions.WithCredentials(username, password);
