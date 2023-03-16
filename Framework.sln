@@ -25,6 +25,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameWork.EventBus.MQTT.Int
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameWork.Serialization.JsonNET", "FrameWork.Serialization.JsonNET\FrameWork.Serialization.JsonNET.csproj", "{2495B62C-BF3E-4B70-B1F6-2F3FFD50FB9D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameWork.Command", "FrameWork.Command\FrameWork.Command.csproj", "{7C97160F-5739-4D6A-9785-D567996BB7EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameWork.Command.Npgsql", "FrameWork.Command.Npgsql\FrameWork.Command.Npgsql.csproj", "{D1094B37-FA6A-423E-BD85-26F5A947199E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameWork.Command.Npgsql.IntegrationTests", "Tests\FrameWork.Command.Npgsql.IntegrationTests\FrameWork.Command.Npgsql.IntegrationTests.csproj", "{D2D703E6-337B-40E5-8929-AC174A1182E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -74,11 +80,24 @@ Global
 		{2495B62C-BF3E-4B70-B1F6-2F3FFD50FB9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2495B62C-BF3E-4B70-B1F6-2F3FFD50FB9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2495B62C-BF3E-4B70-B1F6-2F3FFD50FB9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C97160F-5739-4D6A-9785-D567996BB7EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C97160F-5739-4D6A-9785-D567996BB7EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C97160F-5739-4D6A-9785-D567996BB7EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C97160F-5739-4D6A-9785-D567996BB7EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1094B37-FA6A-423E-BD85-26F5A947199E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1094B37-FA6A-423E-BD85-26F5A947199E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1094B37-FA6A-423E-BD85-26F5A947199E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1094B37-FA6A-423E-BD85-26F5A947199E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2D703E6-337B-40E5-8929-AC174A1182E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2D703E6-337B-40E5-8929-AC174A1182E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2D703E6-337B-40E5-8929-AC174A1182E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2D703E6-337B-40E5-8929-AC174A1182E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{AEEA83C0-754E-4BE1-B5BE-913CEADF0E55} = {B12FE8C0-5AAE-45FD-8A55-BBF9249A45CA}
 		{216DAADD-53B0-4959-9C53-A90311954D6E} = {B12FE8C0-5AAE-45FD-8A55-BBF9249A45CA}
 		{16758989-9089-4D9A-9215-81B525F5426E} = {B12FE8C0-5AAE-45FD-8A55-BBF9249A45CA}
 		{32570AD6-2BFE-4C8F-82B9-26CA3CB7916C} = {B12FE8C0-5AAE-45FD-8A55-BBF9249A45CA}
+		{D2D703E6-337B-40E5-8929-AC174A1182E1} = {B12FE8C0-5AAE-45FD-8A55-BBF9249A45CA}
 	EndGlobalSection
 EndGlobal

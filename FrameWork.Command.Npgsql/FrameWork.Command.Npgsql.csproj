@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <Authors>Jonathon Cwik</Authors>
+        <Description>Adds ability to easily inject connections and transactions into commands</Description>
+        <PackageTags>Command, Pattern, Npgsql</PackageTags>
+        <PackageProjectUrl>https://github.com/JonathonCwik/FrameWork/tree/main/FrameWork.Command.Npgsql</PackageProjectUrl>
+        <PackageIcon>icon.png</PackageIcon>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="..\icon.png" Pack="true" PackagePath="\"/>
+        <PackageReference Include="Npgsql" Version="7.0.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\FrameWork.Command\FrameWork.Command.csproj" />
+    </ItemGroup>
+
+</Project>
